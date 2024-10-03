@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// import 'core/routes/app_roters.dart';
-// import 'core/routes/routing.dart';
+import 'core/routes/app_routers.dart';
+import 'core/routes/routing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.interTextTheme()
       ),
-      // onGenerateRoute: AppRouters.generateRoute,
-      // debugShowCheckedModeBanner: false,
-      // initialRoute: Routing.init,
+      onGenerateRoute: AppRouters.generateRoute,
+      debugShowCheckedModeBanner: false,
+      initialRoute: Routing.init,
       
     );
   }
