@@ -13,4 +13,8 @@ abstract class Styles {
     color:  AppColors.primaryColor,
     fontWeight : FontWeight.bold
   );
+  static const  TextStyle textStyle24 = TextStyle(
+    fontSize: 24,
+    fontWeight : FontWeight.bold
+  );
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_chat_app/features/auth/presentation/view/login_view.dart';
 import 'package:mini_chat_app/features/auth/presentation/view/signup_view.dart';
 
 import '../../features/splash/presentation/views/splash.dart';
@@ -11,6 +12,8 @@ class AppRouters {
         return MaterialPageRoute(builder: (_) => const SplashView());
       case Routing.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpView());
+      case Routing.login:
+        return MaterialPageRoute(builder: (_) => const LoginView());
 
       default:
         return MaterialPageRoute(
