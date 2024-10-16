@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mini_chat_app/features/auth/view/signup_view.dart';
+import 'package:mini_chat_app/features/auth/presentation/view/signup_view.dart';
 
-import '../../features/splash/views/splash.dart';
+import '../../features/splash/presentation/views/splash.dart';
 import 'routing.dart';
 
 class AppRouters {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/routes/routing.dart';
+import '../../../../core/routes/routing.dart';
 import 'widgets/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {

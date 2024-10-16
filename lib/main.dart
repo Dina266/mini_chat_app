@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mini_chat_app/core/shared_widgets/custom_button.dart';
 
 import 'core/routes/app_routers.dart';
 import 'core/routes/routing.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       ),
       onGenerateRoute: AppRouters.generateRoute,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routing.init,
+      // initialRoute: Routing.init,
+      home: CustomButton(),
       
     );
   }
