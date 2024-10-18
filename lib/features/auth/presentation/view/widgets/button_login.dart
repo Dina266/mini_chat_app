@@ -21,7 +21,7 @@ class ButtonLogin extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Validation Successful')),
           );
-          Navigator.pushReplacementNamed(context, Routing.signUp);
+          Navigator.pushReplacementNamed(context, Routing.home);
         } 
       },
       ),
