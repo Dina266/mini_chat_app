@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/image_assets.dart';
+import '../../../../../core/themes/app_colors.dart';
 
 class RecentStatusImg extends StatelessWidget {
   const RecentStatusImg({super.key});
@@ -13,7 +14,7 @@ class RecentStatusImg extends StatelessWidget {
       height: 90, 
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.green, 
+        color: AppColors.primaryColor, 
       ),
       child: Center(
         child: Container(

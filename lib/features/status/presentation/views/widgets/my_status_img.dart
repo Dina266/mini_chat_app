@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:mini_chat_app/core/themes/app_colors.dart';
 
 import '../../../../../core/constants/image_assets.dart';
 
@@ -21,7 +22,7 @@ class MyStatusImg extends StatelessWidget {
           height: 35, 
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.green, 
+            color: AppColors.primaryColor, 
           ),
           child: Center(
             child: Container(
@@ -34,9 +35,9 @@ class MyStatusImg extends StatelessWidget {
               ),
               child: IconButton(
                 onPressed: () {},
-                icon: const Icon(
+                icon:  const Icon(
                   Icons.add,
-                  color: Colors.green,
+                  color: AppColors.primaryColor,
                   size: 16, 
                 ),
               ),

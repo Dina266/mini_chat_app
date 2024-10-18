@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_chat_app/core/themes/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String label;
@@ -30,7 +31,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor ?? Theme.of(context).primaryColor, 
+        backgroundColor: backgroundColor ?? AppColors.primaryColor, 
         textStyle: TextStyle(
           color: textColor ?? Colors.white,
         ), // Text color
@@ -39,12 +40,24 @@ class CustomButton extends StatelessWidget {
         ),
         padding: EdgeInsets.all(padding!),
         minimumSize: Size(width ?? 0, height ?? 0), 
+        // maximumSize: Size(width ?? 450, height ?? 90),
       ),
       onPressed: onPressed,
-      child: Text(
-        label,
-        style: TextStyle(fontSize: fontSize , color: Colors.white),
-      ),
+      child:icon !=null?  Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon , color: Colors.white,size: fontSize !=null? fontSize!+4: null,),
+          SizedBox(width: 10),
+          
+          Text(
+            label,
+            style: TextStyle(fontSize: fontSize , color: Colors.white),
+          ),
+        ],
+      ) : Text(
+            label,
+            style: TextStyle(fontSize: fontSize , color: Colors.white),
+          ),
     );
   }
 }
