@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/themes/app_colors.dart';
 import '../../../chats/presentation/views/chat_view.dart';
+import '../../../status/presentation/views/status_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -15,7 +16,8 @@ class HomeViewState extends State<HomeView> {
 
   final List<Widget> _screens = [
     const ChatsView(),
-    // StatusScreen(),
+    const StatusView(),
+    const StatusView(),
     // CallsScreen(),
   ];
 

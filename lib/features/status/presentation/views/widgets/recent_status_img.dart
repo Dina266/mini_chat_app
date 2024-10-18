@@ -1,0 +1,30 @@
+
+import 'package:flutter/material.dart';
+
+import '../../../../../core/constants/image_assets.dart';
+
+class RecentStatusImg extends StatelessWidget {
+  const RecentStatusImg({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 90, 
+      height: 90, 
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.green, 
+      ),
+      child: Center(
+        child: Container(
+          width: 80, 
+          height: 80,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(image: AssetImage(ImageAssets.person)), 
+          ),
+        ),
+      ),
+    );
+  }
+}
