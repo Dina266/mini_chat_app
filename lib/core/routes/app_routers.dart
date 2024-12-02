@@ -4,7 +4,7 @@ import 'package:mini_chat_app/features/auth/presentation/view/login_view.dart';
 import 'package:mini_chat_app/features/auth/presentation/view/signup_view.dart';
 import 'package:mini_chat_app/features/profile/presentation/views/profile_view.dart';
 
-import '../../features/auth/presentation/view_model/auth_cubit.dart';
+import '../../features/auth/presentation/view_model/cubit/auth_cubit.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/splash/presentation/views/splash.dart';
 import 'routing.dart';

@@ -3,6 +3,8 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
 
+import '../model/user_model.dart';
+
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -22,7 +24,8 @@ class AuthCubit extends Cubit<AuthState> {
         password: password,
       );
       log("User logged in: ${userCredential.user?.email}");
-      emit(AuthSuccess(user: userCredential.user));
+      UserModel userModel = UserModel.fromFirebaseUser(userCredential.user);
+      emit(AuthSuccess(user: userModel));
     } on FirebaseAuthException catch (e) {
       log("Error logging in: ${e.message}");
       emit(AuthFailure(errorMessage: e.message ?? 'Login failed.'));
@@ -44,7 +47,8 @@ class AuthCubit extends Cubit<AuthState> {
       );
 
       log("User created: ${userCredential.user?.email}");
-      emit(AuthSuccess(user: userCredential.user));
+      UserModel userModel = UserModel.fromFirebaseUser(userCredential.user);
+      emit(AuthSuccess(user: userModel));
     } on FirebaseAuthException catch (e) {
       log("Error signing up: ${e.message}");
       emit(AuthFailure(errorMessage: e.message ?? 'Sign up failed.'));

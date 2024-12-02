@@ -4,7 +4,7 @@ import 'package:mini_chat_app/core/routes/routing.dart';
 
 import '../../../../../core/shared_widgets/custom_button.dart';
 import '../../../../../core/themes/app_colors.dart';
-import '../../view_model/auth_cubit.dart';
+import '../../view_model/cubit/auth_cubit.dart';
 
 class ButtonSignUp extends StatelessWidget {
   const ButtonSignUp({
