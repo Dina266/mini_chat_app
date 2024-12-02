@@ -4,7 +4,7 @@ import 'package:mini_chat_app/features/auth/presentation/view/login_view.dart';
 import 'package:mini_chat_app/features/auth/presentation/view/signup_view.dart';
 import 'package:mini_chat_app/features/profile/presentation/views/profile_view.dart';
 
-// import '../../features/auth/presentation/view_model/auth_cubit.dart';
+import '../../features/auth/presentation/view_model/auth_cubit.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/splash/presentation/views/splash.dart';
 import 'routing.dart';
@@ -18,20 +18,20 @@ class AppRouters {
         return MaterialPageRoute(
             builder:
             (_) =>
-            // BlocProvider(
-                  // create: (context) => AuthCubit(),
-                  // child:
+            BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child:
                    const SignUpView(),
-                // )
+                )
                 );
       case Routing.login:
         return MaterialPageRoute(
             builder: (_) => 
-            // BlocProvider(
-                  // create: (context) => AuthCubit(),
-                  // child: 
+            BlocProvider(
+                  create: (context) => AuthCubit(),
+                  child: 
                   const LoginView(),
-                // )
+                )
                 );
       case Routing.home:
         return MaterialPageRoute(builder: (_) => const HomeView());

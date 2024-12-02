@@ -4,7 +4,7 @@ import 'package:mini_chat_app/core/routes/routing.dart';
 
 import '../../../../../core/shared_widgets/custom_button.dart';
 import '../../../../../core/themes/app_colors.dart';
-// import '../../view_model/auth_cubit.dart';
+import '../../view_model/auth_cubit.dart';
 
 class ButtonSignUp extends StatelessWidget {
   const ButtonSignUp({
@@ -21,18 +21,18 @@ class ButtonSignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      // child: BlocListener<AuthCubit, AuthState>(
-      //   listener: (context, state) {
-      //     if (state is AuthLoading) {
-      //       const CircularProgressIndicator();
-      //     } else if (state is AuthSuccess) {
-      //       Navigator.pushReplacementNamed(context, Routing.home);
-      //     } else if (state is AuthFailure) {
-      //       ScaffoldMessenger.of(context).showSnackBar(
-      //         SnackBar(content: Text(state.errorMessage)),
-      //       );
-      //     }
-      //   },
+      child: BlocListener<AuthCubit, AuthState>(
+        listener: (context, state) {
+          if (state is AuthLoading) {
+            const CircularProgressIndicator();
+          } else if (state is AuthSuccess) {
+            Navigator.pushReplacementNamed(context, Routing.home);
+          } else if (state is AuthFailure) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.errorMessage)),
+            );
+          }
+        },
         child: CustomButton(
           label: 'Sign Up',
           backgroundColor: AppColors.primaryColor,
@@ -40,15 +40,15 @@ class ButtonSignUp extends StatelessWidget {
           height: 70,
           onPressed: () {
             if (formKey.currentState!.validate()) {
-              // final authCubit = BlocProvider.of<AuthCubit>(context);
-              // authCubit.createUserWithEmailAndPassword(
-              //   email: emailController.text.trim(),
-              //   password: passwordController.text.trim(),
-              // );
+              final authCubit = BlocProvider.of<AuthCubit>(context);
+              authCubit.createUserWithEmailAndPassword(
+                email: emailController.text.trim(),
+                password: passwordController.text.trim(),
+              );
             }
           },
         ),
-      // ),
+      ),
     );
   }
 }

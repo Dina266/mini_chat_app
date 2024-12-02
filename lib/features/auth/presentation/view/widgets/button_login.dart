@@ -4,7 +4,7 @@ import 'package:mini_chat_app/core/routes/routing.dart';
 
 import '../../../../../core/shared_widgets/custom_button.dart';
 import '../../../../../core/themes/app_colors.dart';
-// import '../../view_model/auth_cubit.dart';
+import '../../view_model/auth_cubit.dart';
 
 class ButtonLogin extends StatelessWidget {
   const ButtonLogin(
@@ -19,19 +19,18 @@ class ButtonLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      // child: 
-      // BlocListener<AuthCubit, AuthState>(
-        // listener: (context, state) {
-        //   if (state is AuthLoading) {
-        //     const CircularProgressIndicator();
-        //   } else if (state is AuthSuccess) {
-        //     Navigator.pushReplacementNamed(context, Routing.home);
-        //   } else if (state is AuthFailure) {
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //       SnackBar(content: Text(state.errorMessage)),
-        //     );
-        //   }
-        // },
+      child: BlocListener<AuthCubit, AuthState>(
+        listener: (context, state) {
+          if (state is AuthLoading) {
+            const CircularProgressIndicator();
+          } else if (state is AuthSuccess) {
+            Navigator.pushReplacementNamed(context, Routing.home);
+          } else if (state is AuthFailure) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.errorMessage)),
+            );
+          }
+        },
         child: CustomButton(
           label: 'Sign In',
           backgroundColor: AppColors.primaryColor,
@@ -39,7 +38,7 @@ class ButtonLogin extends StatelessWidget {
           height: 70,
           onPressed: () {
             if (formKey.currentState!.validate()) {
-              // BlocProvider.of<AuthCubit>(context).loginWithEmailAndPassword(email: email.text.trim(), password: pass.text.trim());
+              BlocProvider.of<AuthCubit>(context).loginWithEmailAndPassword(email: email.text.trim(), password: pass.text.trim());
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Validation Successful')),
               );
@@ -47,7 +46,7 @@ class ButtonLogin extends StatelessWidget {
             }
           },
         ),
-      // ),
+      ),
     );
   }
 }
